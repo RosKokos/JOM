@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Login</title>
+</head>
+<body style="background-color: cadetblue;">
+<div style="text-align: center; background-color: #ddd;
+     border-width: 10px;
+     border-style: solid;
+     border-color: green;">
+<h2 style="font-family: Arial; ">LogIn Page</h2>
+<div  th:if="${param.error}">Invalid username and password.</div>
+<div  th:if="${param.logout}">You have been logged out.</div>
+<form th:action="@{/login-page}" method="POST">
+    <label  style="color: mediumblue ">Username:</label >
+    <input  style="border-radius: 4px;" type="text" name="username"  placeholder="Email"/><br>
+    <label style="color: mediumblue " >Password:</label >
+    <input  style="border-radius: 4px;" type="password" name="password" /><br>
+    <input style="color: blue ;
+    background-color: darkseagreen ;
+    
+    border-radius: 4px;
+    background-color: #4CAF50;"  type="submit" value="LogIn" />
+</form>
+<strong >Don't have an account?</strong><a th:href="@{/create-user}">  Register now</a>
+</div>
+</body>
+</html>
